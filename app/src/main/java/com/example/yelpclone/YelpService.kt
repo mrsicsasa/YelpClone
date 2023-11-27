@@ -10,5 +10,5 @@ interface YelpService {
         @Header("Authorization") authHeader:String,
         @Query("term") searchTerm:String,
         @Query("location") location:String
-    ):retrofit2.Call<Any>
+    ):retrofit2.Call<YelpSearchResult>
 }

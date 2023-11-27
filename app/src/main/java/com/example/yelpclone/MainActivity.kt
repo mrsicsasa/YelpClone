@@ -18,12 +18,12 @@ class MainActivity : AppCompatActivity() {
             setContentView(R.layout.activity_main)
             val retrofit= Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build()
             val yelpService=retrofit.create(YelpService::class.java)
-            yelpService.searchRestourants("Bearer $API_KEY","Avocado Toast","New York").enqueue(object:Callback<Any>{
-                override fun onResponse(call: Call<Any>, response: Response<Any>) {
+            yelpService.searchRestourants("Bearer $API_KEY","Avocado Toast","New York").enqueue(object:Callback<YelpSearchResult>{
+                override fun onResponse(call: Call<YelpSearchResult>, response: Response<YelpSearchResult>) {
                     Log.i("MainActivity","onResponse $response")
                 }
 
-                override fun onFailure(call: Call<Any>, t: Throwable) {
+                override fun onFailure(call: Call<YelpSearchResult>, t: Throwable) {
                     Log.i("MainActivity","onResponse $t")
                 }
             })
