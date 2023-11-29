@@ -14,7 +14,7 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 
 
-class RasturantsAdapter(val context: Context, val restaurants: List<YelpRestaurants>):RecyclerView.Adapter<RasturantsAdapter.ViewHolder>() {
+class ResturantsAdapter(val context: Context, val restaurants: List<YelpRestaurants>):RecyclerView.Adapter<ResturantsAdapter.ViewHolder>() {
     inner class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
 
         fun bind(restaurant: YelpRestaurants){
